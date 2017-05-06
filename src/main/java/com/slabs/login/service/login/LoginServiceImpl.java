@@ -47,7 +47,6 @@ public class LoginServiceImpl implements LoginService {
 
       AuthNRequestBuilder authNRequestBuilder = new AuthNRequestBuilder();
       AuthnRequest authRequest = authNRequestBuilder.buildAuthenticationRequest(assertionConsumerServiceUrl, issuerId);
-      LOGGER.info("null?=" + authRequest);
       String samlRequest = generateSAMLRequest(authRequest);
 
       // Prepare final Url
