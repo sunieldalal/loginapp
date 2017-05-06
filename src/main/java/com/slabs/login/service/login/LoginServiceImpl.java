@@ -1,7 +1,8 @@
-package com.slabs.login.service;
+package com.slabs.login.service.login;
+
+import org.opensaml.DefaultBootstrap;
 import org.opensaml.saml2.core.AuthnRequest;
 import org.opensaml.xml.io.Marshaller;
-import org.opensaml.xml.io.MarshallingException;
 import org.opensaml.xml.util.Base64;
 import org.opensaml.xml.util.XMLHelper;
 import org.slf4j.Logger;
@@ -9,16 +10,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import java.io.ByteArrayOutputStream;
 import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.zip.Deflater;
 import java.util.zip.DeflaterOutputStream;
-import org.opensaml.DefaultBootstrap;
 
 @Service
-public class LoginService {
+public class LoginServiceImpl implements LoginService {
 
-  private static Logger LOGGER = LoggerFactory.getLogger(LoginService.class.getName());
+  private static Logger LOGGER = LoggerFactory.getLogger(LoginServiceImpl.class.getName());
 
   {
     /* Initializing the OpenSAML library, Should be in some central place */
@@ -38,6 +37,7 @@ public class LoginService {
   *  - URL encode it
   *  - Appends RelayState
   */
+  @Override
   public String getAuthNRedirectUrl(String idpAppURL, String relayState, String assertionConsumerServiceUrl, String issuerId){
 
     LOGGER.info("idpAppURL=" + idpAppURL + " relayState=" + relayState + " assertionConsumerServiceUrl=" + assertionConsumerServiceUrl + " issuerId=" + issuerId);

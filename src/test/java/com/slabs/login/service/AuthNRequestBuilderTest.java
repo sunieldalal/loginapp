@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.opensaml.saml2.core.AuthnRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.slabs.login.service.login.AuthNRequestBuilder;
 
 public class AuthNRequestBuilderTest {
   

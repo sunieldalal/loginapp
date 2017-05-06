@@ -1,5 +1,5 @@
 
-package com.slabs.login.service;
+package com.slabs.login.service.login;
 import org.opensaml.common.SAMLVersion;
 import org.opensaml.saml2.core.AuthnContextClassRef;
 import org.opensaml.saml2.core.AuthnContextComparisonTypeEnumeration;
