@@ -1,11 +1,13 @@
 
 # How to Run this example
 
-Run below command to run the web app
+Run below command to run the web app.
 
 ```
 gradle bootRun
 ```
+
+Go to http://localhost:8080
 
 # Properties
 
